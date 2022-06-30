@@ -1,43 +1,31 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './App.css'
-
+import  Table  from './Components/Table'
+interface IThead {
+  id: number;
+  name: string;
+}
 function App() {
-  const [count, setCount] = useState(0)
 
+  // const [data,setData]= useState<any[]>([])
+  const [thead,setthead] = useState<IThead>({id:1,name:"df"})
+  const [tbody,setTbody] = useState<[]>([])
+  
+  async function getData(url:string){
+   const res =  await axios.get(url)
+   setthead(res.data.thead);
+   setTbody(res.data.tbody);
+  
+   }
+   
+ // const [tbody,setBody]= useState([])
+ useEffect( ()=>{
+  getData("http://localhost:3000/data");
+ },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+   <Table thead={thead} tbody={tbody}/>
     </div>
   )
 }
