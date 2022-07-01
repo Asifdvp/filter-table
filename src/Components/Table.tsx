@@ -36,7 +36,7 @@ export interface IThead1 {
   thead: IThead | undefined;
 }
 export interface ITbody1 {
-  thead: ITbody | undefined;
+  tbody: ITbody | undefined;
 }
 
 const Table: React.FC<{ thead: IThead1 | []; tbody: ITbody1 | []}> = ({
@@ -46,24 +46,17 @@ const Table: React.FC<{ thead: IThead1 | []; tbody: ITbody1 | []}> = ({
   return (
     <>
   
-      {/* {
+      {
        (thead as unknown as any[]).map((item: IThead) => {
           return <h1 key={item.id}>{item.name}</h1>;
-        }) */}
-{/* } */}
+        }) }
+{
+       (tbody as unknown as any[]).map((item: ITbody) => {
+          return <h1 key={item.id}>{item.kys}</h1>;
+        }) 
+ }
     </>
-    //    <TableContainer component={Paper}>
-    //       <Table sx={{ minWidth: 650 }} aria-label="simple table">
-    //         <TableHead>
-    //           <TableRow>
-    //             {data.thead.map(item=>(
-    //  <TableCell key={item.id}>{item.name}</TableCell>
-    //             ))}
-    //           </TableRow>
-    //         </TableHead>
 
-    //       </Table>
-    //     </TableContainer>
   );
 };
 

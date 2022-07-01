@@ -6,7 +6,7 @@ import React from 'react'
 import ReplayIcon from '@mui/icons-material/Replay';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -35,10 +35,26 @@ const rows = [
 ];
 
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+  
+    color:"#1565C0",
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
 
 
-
-
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: "#124595",
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 
 
 
@@ -119,7 +135,7 @@ const Header = () => {
       width:"30px"
     }}/>
    </Button>
-   <Button variant="outlined" sx={{
+   <Button variant="contained" sx={{
       padding:"16px",
       boxSizing:"border-box",
    }}>
@@ -132,53 +148,67 @@ const Header = () => {
    </Box>
 </Box>
 <Box>
-<TableContainer component={Paper}>
+<TableContainer component={Paper} sx={{padding:"40px 20px"}}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             {/* <TableCell  sx={{border:"0"}}>Dessert (100g serving)</TableCell> */}
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Calories</TableCell>
-            <TableCell  sx={{border:"0"}}  align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell  sx={{border:"0"}} align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell   sx={{border:"0"}} align="right">Protein&nbsp;(g)</TableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            <StyledTableCell  sx={{border:"0"}} align="right">Calories</StyledTableCell>
+            
+   
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow 
+            <StyledTableRow 
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } , border:"0"}}
             >
               {/* <TableCell component="th" scope="row" sx={{border:"0"}}>
                 {row.name}
               </TableCell> */}
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.calories}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.fat}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.carbs}</TableCell>
-              <TableCell align="right" sx={{border:"0"}}>{row.protein}</TableCell>
-            </TableRow>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+              <TableCell  >{row.calories}</TableCell>
+             
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>

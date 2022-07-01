@@ -7,5 +7,22 @@ body{
   background-color: #F4FAFF;
 }
 .MuiTableCell-root {
-  border-bottom: none;
+  border: none !important;
+  text-align: center !important;
+
 }
+.MuiTable-root{
+  &:placeholder{
+    background-color: red;
+    color: red;
+  }
+}
+// .MuiTableRow-root{
+ 
+//   &:hover{
+//     background-color: yellow;
+//   }
+// }
+// .MuiTableRow-hover{
+//   background-color: yellow !important;
+// }

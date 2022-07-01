@@ -9,5 +9,11 @@ body {
 }
 
 .MuiTableCell-root {
-  border-bottom: none;
+  border: none !important;
+  text-align: center !important;
+}
+
+.MuiTable-root:placeholder {
+  background-color: red;
+  color: red;
 }/*# sourceMappingURL=App.css.map */
