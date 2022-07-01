@@ -4,68 +4,31 @@ import "./App.css";
 import { IThead, ITbody } from "./data";
 import Table from "./Components/Table";
 import Header from "./Components/Header";
-interface IThead1 {
-  thead: IThead | undefined;
-}
-interface ITbody1 {
-  tbody: ITbody | undefined;
+interface data {
+  thead: IThead[];
+  tbody: ITbody[];
 }
 function App() {
-  // const [data,setData]= useState<any[]>([])
-  // const [thead,setthead] = useState< IThead | []>([] )
-  // const [tbody,setTbody] = useState< ITBody | []>([])
-
-  const [thead, setthead] = useState<IThead1 | []>([]);
-  const [tbody, setTbody] = useState<ITbody1 | []>([]);
+  const [thead, setthead] = useState<IThead[]>([{id:2,name:""}]);
+  const [tbody, setTbody] = useState<ITbody[]>([]);
 
   const getData = async (url: string) => {
-    const res = await axios.get(url);
-    setthead(res.data.thead);
-    setTbody(res.data.tbody);
+    const res = await axios.get(url)
+    const data:data = res.data;
+    const thead:IThead[]= data.thead;
+    const tbody:ITbody[] = data.tbody;
+    // (thead:React.SetStateAction<IThead[]>)=>setthead(thead);
+    // (tbody:React.SetStateAction<ITbody[]>)=>setTbody(tbody);
+    setthead(thead);
+    setTbody(tbody);
   };
-  // async function getData(url:string){
-  //  const res =  await axios.get(url)
-  //  setthead(res.data.thead);
-  //  setTbody(res.data.tbody);
-
-  //  }
-
-  // const [tbody,setBody]= useState([])
   useEffect(() => {
     getData("http://localhost:3000/data");
   }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- 
-
-
-
-
-
-
   return (
     <div className="App">
-      <Header/>
+      <Header thead={thead} tbody={tbody}/>
       {/* <Table thead={thead} tbody={tbody} /> */}
-
-      
     </div>
   );
 }

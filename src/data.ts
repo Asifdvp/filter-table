@@ -1,14 +1,14 @@
- export type IThead ={
-    "id": number;
-    "name": string;
+ export interface IThead {
+    id: number;
+    name: string;
   };
-  export type ITbody = {
+  export interface ITbody {
     id: number;
     kys: number;
     tarix: "string";
     interval: "string";
-    hekim: "stringf";
-    "O.T.İ": "number";
+    hekim: "string";
+    OTİ: "number";
     maşınlar: "number";
     seyyar: "string";
     barb: "string";
@@ -17,4 +17,9 @@
     psix: "string";
     şüa: "string";
     lab: "string";
+    cerrah:"string";
+    cerrah1:"string";
+    cerrah2:"string";
+    cerrah3:"string";
+    cerrah4:"string";
   }

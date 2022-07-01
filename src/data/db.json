@@ -55,7 +55,23 @@
             },
             {
                 "id": 14,
-                "name": "Həkim-cərrah"
+                "name": "Cerrah"
+            },
+            {
+                "id": 15,
+                "name": "Cerrah1"
+            },
+            {
+                "id": 16,
+                "name": "Cerrah2"
+            },
+            {
+                "id": 17,
+                "name": "Cerrah3"
+            },
+            {
+                "id": 18,
+                "name": "Cerrah4"
             }
         ],
         "tbody": [
@@ -64,17 +80,86 @@
                 "kys": 123456,
                 "tarix": "12/01/2022",
                 "interval": "12/01/2022-12/01/2022",
-                "hekim": "Asif",
-                "O.T.İ": "5",
+                "hekim": "5",
+                "OTİ": "5",
                 "maşınlar": "2",
-                "seyyar": "Azər",
-                "barb": "Rəşad",
-                "uarb": "Ramil",
-                "nevroloji": "Səbinə",
-                "psix": "Nadir",
-                "şüa": "Ülkər",
-                "lab": "Kənan"
+                "seyyar": "4",
+                "barb": "3",
+                "uarb": "2",
+                "nevroloji": "4",
+                "psix": "9",
+                "şüa": "10",
+                "lab": "11",
+                "cerrah":"12",
+                "cerrah1":"12",
+                "cerrah2":"12",
+                "cerrah3":"12",
+                "cerrah4":"12"
+            },
+            {
+                "id": 2,
+                "kys": 123456,
+                "tarix": "12/01/2022",
+                "interval": "12/01/2022-12/01/2022",
+                "hekim": "5",
+                "OTİ": "5",
+                "maşınlar": "2",
+                "seyyar": "4",
+                "barb": "3",
+                "uarb": "2",
+                "nevroloji": "4",
+                "psix": "9",
+                "şüa": "10",
+                "lab": "11",
+                "cerrah":"12",
+                "cerrah1":"12",
+                "cerrah2":"12",
+                "cerrah3":"12",
+                "cerrah4":"12"
+            },
+            {
+                "id": 3,
+                "kys": 123456,
+                "tarix": "12/01/2022",
+                "interval": "12/01/2022-12/01/2022",
+                "hekim": "5",
+                "OTİ": "5",
+                "maşınlar": "2",
+                "seyyar": "4",
+                "barb": "3",
+                "uarb": "2",
+                "nevroloji": "4",
+                "psix": "9",
+                "şüa": "10",
+                "lab": "11",
+                "cerrah":"12",
+                "cerrah1":"12",
+                "cerrah2":"12",
+                "cerrah3":"12",
+                "cerrah4":"12"
+            },
+            {
+                "id": 4,
+                "kys": 123456,
+                "tarix": "12/01/2022",
+                "interval": "12/01/2022-12/01/2022",
+                "hekim": "5",
+                "OTİ": "5",
+                "maşınlar": "2",
+                "seyyar": "4",
+                "barb": "3",
+                "uarb": "2",
+                "nevroloji": "4",
+                "psix": "9",
+                "şüa": "10",
+                "lab": "11",
+                "cerrah":"12",
+                "cerrah1":"12",
+                "cerrah2":"12",
+                "cerrah3":"12",
+                "cerrah4":"12"
             }
+        
         ]
     }
   

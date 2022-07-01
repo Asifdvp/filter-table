@@ -2,21 +2,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-y: hidden !important;
 }
 body{
   background-color: #F4FAFF;
+
 }
 .MuiTableCell-root {
   border: none !important;
   text-align: center !important;
 
 }
-.MuiTable-root{
-  &:placeholder{
-    background-color: red;
-    color: red;
-  }
-}
+
 // .MuiTableRow-root{
  
 //   &:hover{
@@ -26,3 +23,42 @@ body{
 // .MuiTableRow-hover{
 //   background-color: yellow !important;
 // }
+/* width */
+::-webkit-scrollbar {
+  max-width:100px;
+  border: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white; 
+  max-width:100px;
+  border: none !important;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00b3fc; 
+  width: 10px ;
+  max-width:100px !important;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #dceefd; 
+  width: 10px ;
+
+}
+// .MuiPagination-outlined	{
+//   color: red;
+//   color:"#00b3fc";
+//   border-color:"#00b3fc";
+// }
+// .MuiButtonBase-root,
+//  .MuiPaginationItem-root, .MuiPaginationItem-sizeMedium ,.MuiPaginationItem-outlined ,.MuiPaginationItem-rounded, .MuiPaginationItem-outlinedPrimary, .Mui-selected, .MuiPaginationItem-page{
+// background-color:#f00 !important;
+// }
+.MuiTableCell-root, .MuiTableCell-head ,.MuiTableCell-alignRight ,.MuiTableCell-sizeMedium ,.css-1eix2su-MuiTableCell-root{
+  width: 500px !important;
+}

@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-y: hidden !important;
 }
 
 body {
@@ -13,7 +14,33 @@ body {
   text-align: center !important;
 }
 
-.MuiTable-root:placeholder {
-  background-color: red;
-  color: red;
+/* width */
+::-webkit-scrollbar {
+  max-width: 100px;
+  border: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  max-width: 100px;
+  border: none !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00b3fc;
+  width: 10px;
+  max-width: 100px !important;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #dceefd;
+  width: 10px;
+}
+
+.MuiTableCell-root, .MuiTableCell-head, .MuiTableCell-alignRight, .MuiTableCell-sizeMedium, .css-1eix2su-MuiTableCell-root {
+  width: 500px !important;
 }/*# sourceMappingURL=App.css.map */
