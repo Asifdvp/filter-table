@@ -1,7 +1,8 @@
 import {
     Box,
     styled,
-    Paper
+    Paper,
+    withStyles
   } from "@mui/material";
   import React, { useEffect } from "react";
   import Table from "@mui/material/Table";
@@ -35,7 +36,9 @@ import {
       backgroundColor: "#00b3fc",
     },
   }));
-  
+
+
+
   const index: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({
     thead,
     tbody,
@@ -57,10 +60,12 @@ import {
         flexDirection: "column",
         alignItems: "space-between",
         justifyContent: "space-between",
-        borderRadius: "20px",
+        borderRadius: "20px"
+    
+ 
       }}
     >
-      <Table  aria-label="simple table">
+      <Table  aria-label="simple table"  >
         <TableHead>
           <TableRow>
             {thead.map((th: IThead) => (
@@ -84,9 +89,9 @@ import {
                 border: "0"
               }}
             >
-              <TableCell>{tr.kys}</TableCell>
+              <TableCell sx={{width:"100px !important"}} >{tr.kys}</TableCell>
               <TableCell>{tr.tarix}</TableCell>
-              <TableCell sx={{ width: "900px !important" }}>
+              <TableCell >
                 {tr.interval}
               </TableCell>
               <TableCell>{tr.hekim}</TableCell>
@@ -118,8 +123,8 @@ import {
 }}>
         <Pagination
           count={5}
-          variant="outlined"
           shape="rounded"
+          color="primary"
           sx={{
             
       width:"500px",
@@ -128,6 +133,7 @@ import {
                 backgroundColor: "white",
                 color: "#00b3fc",
                 borderColor: "#00b3fc",
+                border:"1px solid #00b3fc",
                 "&:hover": {
                   backgroundColor: "#00b3fc",
                   color: "white",
