@@ -2,8 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { IThead, ITbody } from "./data";
-import Table from "./Components/Table";
-import Header from "./Components/Header";
+import Header from './Models/Header/index'
+// import Header from "./Components/Header";
 interface data {
   thead: IThead[];
   tbody: ITbody[];
@@ -22,12 +22,38 @@ function App() {
     setthead(thead);
     setTbody(tbody);
   };
-  useEffect(() => {
-    getData("http://localhost:3000/data");
-  }, []);
+ 
+
+  //element silinmesi
+  const deleteItem= async (id:any)=>{
+    if(!(isNaN(id))){
+      let newData =  await[...tbody];
+      newData = tbody.filter((item)=>{
+       if(item.id !== id){
+
+         return item
+       }
+     }
+      )
+      setTbody(newData)
+    
+      console.log(newData)
+    }
+ 
+//  setTbody(newData)
+
+    }
+//     console.log(e.target.parentElement.parentElement.parentElement.childElementCount);
+// console.log(e.target.parentElement.parentElement.parentElement);
+// console.log(e.target.parentElement.parentElement.parentElement.childElementCount);
+useEffect(() => {
+  getData("http://localhost:3000/data");
+}, []);
   return (
     <div className="App">
-      <Header thead={thead} tbody={tbody}/>
+      <Header/>
+ 
+      
       {/* <Table thead={thead} tbody={tbody} /> */}
     </div>
   );
