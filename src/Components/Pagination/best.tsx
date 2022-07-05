@@ -1,4 +1,4 @@
-import { Pagination ,Box} from '@mui/material'
+import { Pagination ,Box, Link} from '@mui/material'
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react'
 const Best:FC<any> = () => {
@@ -18,15 +18,10 @@ const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
 
 const currentPosts = data.slice(indexOfFirstPost,indexOfLastPost);
-// const paginate = (pageNumber:any) => setCurrentPage(pageNumber);
     let pageNumber = Math.ceil(Number(data.length)/Number(postsPerPage));
 //     console.log(pageNumber);
 let paginate = (pageNumber:any) =>{
     setCurrentPage(pageNumber.target.textContent)
-//   console.log(pageNumber.target.textContent)
-//   if(pageNumber.target)
-// console.log(pageNumber.target.parentElement.parentElement)
-// console.log(pageNumber.target)
 
 const currentLi =  pageNumber.target.parentElement.parentElement;
 const leftBtn = pageNumber.target.parentElement.parentElement.parentElement.children[0];
@@ -42,7 +37,11 @@ const rightBtn = ul[lastLi]
 // console.log(leftBtn);
 // console.log(currentLi)
 }
-
+const pageNumbers = [];
+for (let i = 1; i <= Math.ceil(data.length / postsPerPage); i++) {
+  pageNumbers.push(i);
+}
+console.log(pageNumbers)
   return (
     <div>
 
@@ -76,8 +75,42 @@ const rightBtn = ul[lastLi]
               },
           }}
         /> 
+              {/* <ul className='pagination' >
+                <li>left</li>
+          {pageNumbers.map((number:any) => (
+            <li key={number} className='page-item'>
+              <Link onClick={(e) => {
+                // console.log(e.target.textContent)
+paginate(number)
+              }   }    to="/best" className='page-link' >
+                {number}
+              </Link>
+            </li>
+            <li>next</li>
+          ))}
+        </ul> */}
+        <ul className='pagination'>
+          <li className='page-item'>Li</li>
+          {pageNumbers.map((num:number)=>(
+            <Link onClick = {(e)=>{console.log('dsfdsf')}}>
+   <li key={num} className="page-item">{num}</li>
+            </Link>
+         
+          ))}
+          <li className='page-item'>Right</li>
+        </ul>
         </Box>
-
+        {/* <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+      /> */}
 
     </div>
   )
