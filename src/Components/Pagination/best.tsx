@@ -1,13 +1,11 @@
-import { Pagination, Box, Link } from "@mui/material";
+import { Pagination, Box } from "@mui/material";
 import axios from "axios";
 import React, { FC, useEffect, useState, useRef } from "react";
 import "./index.scss";
-
-
-import {
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';import {
   styled,
   Paper,
-  withStyles
 } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -17,7 +15,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { IThead, ITbody } from "../../data";
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -44,12 +41,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 
-
-
-
-
-
 const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({thead,tbody,deleteItem}) => {
+
+
+
+
+
+
+
+
+
+
+
+  
   const leftR = useRef(null);
   const cur = useRef(null);
   const [data, setData] = useState([]);
@@ -93,6 +97,9 @@ const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({th
     if (currentPage === 1) {
       setDisabled(true);
     }
+    if (currentPage !== 1) {
+      setDisabled(false);
+    }
     if (currentPage < MaxNumber) {
       setDisabledR(false);
     }
@@ -103,47 +110,7 @@ const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({th
 
   return (
     <div>
-      <Box>
-        <ul>
-          {currentPosts.map((item: any) => (
-            <li key={item.id}>{item.id}</li>
-          ))}
-        </ul>
-      </Box>
-      <Box sx={{}}>
-        <ul className="pagination">
-          <button
-            disabled={dis}
-            ref={leftR}
-            className="page-item left"
-            onClick={left}
-          >
-            Li
-          </button>
-          {pageNumbers.map((num: number) => (
-            <li
-              className="page-item"
-              key={num}
-              onClick={(e) => {
-                paginate(num);
-              }}
-            >
-              {num}
-            </li>
-          ))}
-          <button disabled={disR} className="page-item right" onClick={right}>
-            Right
-          </button>
-        </ul>
-      </Box>
-
-
-
-
-
-
-
-
+   
 
 
 
@@ -185,7 +152,7 @@ const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({th
           </TableRow>
         </TableHead>
         <TableBody>
-          {tbody.map((tr: ITbody) => (
+          {currentPosts.map((tr: ITbody) => (
            
             <StyledTableRow
               key={tr.id}
@@ -223,10 +190,41 @@ const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({th
       </Table>     
     </TableContainer>
   </Box>
-  <Box  sx={{display:"flex",justifyContent:"flex-end",  transform: 'translate(13%,-100px)',
+  <Box  sx={{display:"flex",justifyContent:"flex-end",  transform: 'translate(-2%,-100px)',
 
 }}>
-        <Pagination
+
+
+
+<Box sx={{}}>
+        <ul className="pagination">
+          <button
+            disabled={dis}
+            ref={leftR}
+            className="page-item left"
+            onClick={left}
+          
+          >
+            <  ArrowBackIosNewIcon  sx={{width:"15px",height:"15px"}}/>
+          </button>
+          {pageNumbers.map((num: number) => (
+            <li
+              className="page-item"
+              key={num}
+              onClick={(e) => {
+                paginate(num);
+              }}
+            >
+              {num}
+            </li>
+          ))}
+          <button disabled={disR} className="page-item left"   onClick={right}>
+         < ArrowForwardIosIcon  sx={{width:"15px",height:"15px"}}/>
+          </button>
+        </ul>
+      </Box>
+
+        {/* <Pagination
           count={5}
           shape="rounded"
           color="primary"
@@ -249,7 +247,7 @@ const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({th
                 },
               },
           }}
-        /> 
+        />  */}
         </Box>   </div>
 
 

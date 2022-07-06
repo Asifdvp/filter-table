@@ -7,9 +7,15 @@
 .pagination .page-item {
   padding: 5px 10px;
   border: 1px solid red;
-  margin: 0 10px;
+  margin: 0 5px;
   border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pagination .page-item:hover {
   background: yellow;
+}
+.pagination .left {
+  padding: 8.2px 7.5px;
 }/*# sourceMappingURL=index.css.map */
