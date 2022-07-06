@@ -1,6 +1,7 @@
 import { Pagination ,Box, Link} from '@mui/material'
 import axios from 'axios';
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react';
+import './index.scss'
 const Best:FC<any> = () => {
     const  [data,setData] = useState([]);
     const [currentPage,setCurrentPage] = useState(1);
@@ -92,8 +93,8 @@ paginate(number)
         <ul className='pagination'>
           <li className='page-item'>Li</li>
           {pageNumbers.map((num:number)=>(
-            <Link onClick = {(e)=>{console.log('dsfdsf')}}>
-   <li key={num} className="page-item">{num}</li>
+            <Link  key={num}  onClick = {(e)=>{console.log('dsfdsf')}}>
+   <li className="page-item">{num}</li>
             </Link>
          
           ))}

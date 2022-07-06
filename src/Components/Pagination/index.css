@@ -1,0 +1,15 @@
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination .page-item {
+  padding: 5px 10px;
+  border: 1px solid red;
+  margin: 0 10px;
+  border-radius: 7px;
+}
+.pagination .page-item:hover {
+  background: yellow;
+}/*# sourceMappingURL=index.css.map */

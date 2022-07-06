@@ -1,0 +1,16 @@
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .page-item{
+    padding: 5px 10px;
+    border: 1px solid red;
+    margin: 0 10px;
+    border-radius: 7px;
+    &:hover{
+        background: yellow  ;
+    }
+    }
+    }
+  

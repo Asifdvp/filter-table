@@ -1,3 +1,19 @@
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination .page-item {
+  padding: 5px 10px;
+  border: 1px solid red;
+  margin: 0 10px;
+  border-radius: 7px;
+}
+.pagination .page-item:hover {
+  background: yellow;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
