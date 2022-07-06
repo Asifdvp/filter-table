@@ -5,6 +5,7 @@ import Table from '../../Components/Table/index';
 import { Stack } from '@mui/material';
 
 import { IThead, ITbody } from "../../data";
+import Best from '../../Components/Pagination/best';
 interface data {
     thead: IThead[];
     tbody: ITbody[];
@@ -57,7 +58,8 @@ const index = () => {
     }}
   >
      <Search/>
-     <Table thead={thead} tbody={tbody} deleteItem={deleteItem}/>
+     {/* <Table thead={thead} tbody={tbody} deleteItem={deleteItem}/> */}
+     <Best thead={thead} tbody={tbody} deleteItem={deleteItem} />
     </Stack>
   )
 }
