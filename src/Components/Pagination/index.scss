@@ -4,17 +4,21 @@
     justify-content: center;
     align-items: center;
     .page-item{
+        color: #00b3fc;
     padding: 5px 10px;
-    border: 1px solid red;
+    border: 1px solid #00b3fc;
     margin: 0 5px;
+    background-color: white;
     border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &:hover{
-        background: yellow  ;
+        background: #00b3fc  ;
+        color: white ;
     }
+    
     }
     .left{
         padding: 8.2px 7.5px;

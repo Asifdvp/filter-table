@@ -202,8 +202,7 @@ const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({th
             disabled={dis}
             ref={leftR}
             className="page-item left"
-            onClick={left}
-          
+            onClick={left}        
           >
             <  ArrowBackIosNewIcon  sx={{width:"15px",height:"15px"}}/>
           </button>
@@ -224,30 +223,7 @@ const Best: React.FC<{ thead: IThead[]; tbody: ITbody[], deleteItem:any}> = ({th
         </ul>
       </Box>
 
-        {/* <Pagination
-          count={5}
-          shape="rounded"
-          color="primary"
-          sx={{
-            
-      width:"500px",
-            ".MuiButtonBase-root,.MuiPaginationItem-sizeMedium ,.MuiPaginationItem-outlined ,.MuiPaginationItem-rounded, .MuiPaginationItem-outlinedPrimary, .Mui-selected, .MuiPaginationItem-page":
-              {
-                backgroundColor: "white",
-                color: "#00b3fc",
-                borderColor: "#00b3fc",
-                border:"1px solid #00b3fc",
-                "&:hover": {
-                  backgroundColor: "#00b3fc",
-                  color: "white",
-                },
-                "&:focus": {
-                  backgroundColor: "#00b3fc",
-                  color: "white",
-                },
-              },
-          }}
-        />  */}
+      
         </Box>   </div>
 
 
